@@ -96,8 +96,13 @@ package com.ryanmod.cattnt;
 	    private void explode()
 	    {
 	        //float f = 224.0F;
-	        float f = 20F;
+	        float f = 1F;
 	        this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, f, true);
+	        
+	        // Playing with Fireworks -- Not quite working yet!
+	        //NBTTagCompound NBTTagCompound = null;
+			//this.worldObj.makeFireworks(1,  this.posX, this.posY, this.posZ, 100, 100, NBTTagCompound);
+			
 	    }
 
 	    /**
