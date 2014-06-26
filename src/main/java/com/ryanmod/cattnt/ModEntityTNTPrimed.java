@@ -95,7 +95,8 @@ package com.ryanmod.cattnt;
 
 	    private void explode()
 	    {
-	        float f = 224.0F;
+	        //float f = 224.0F;
+	        float f = 20F;
 	        this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, f, true);
 	    }
 
