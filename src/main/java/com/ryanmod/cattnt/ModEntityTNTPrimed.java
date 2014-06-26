@@ -2,11 +2,14 @@ package com.ryanmod.cattnt;
 
 
 	import cpw.mods.fml.relauncher.Side;
-	import cpw.mods.fml.relauncher.SideOnly;
-	import net.minecraft.entity.Entity;
-	import net.minecraft.entity.EntityLivingBase;
-	import net.minecraft.nbt.NBTTagCompound;
-	import net.minecraft.world.World;
+import cpw.mods.fml.relauncher.SideOnly;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
+import net.minecraft.server.MinecraftServer;
+import net.minecraft.entity.passive.EntityOcelot;
+
 
 	public class ModEntityTNTPrimed extends Entity {
 
@@ -102,6 +105,16 @@ package com.ryanmod.cattnt;
 	        // Playing with Fireworks -- Not quite working yet!
 	        //NBTTagCompound NBTTagCompound = null;
 			//this.worldObj.makeFireworks(1,  this.posX, this.posY, this.posZ, 100, 100, NBTTagCompound);
+	        
+	        Entity entity;
+	  
+	                        
+	        for (int i=1; i<50; i=i+1)
+	        {
+	            entity = new EntityOcelot(this.worldObj);
+		        entity.setPosition(this.posX,this.posY,this.posZ);
+	        	this.worldObj.spawnEntityInWorld(entity);
+	        }
 			
 	    }
 
