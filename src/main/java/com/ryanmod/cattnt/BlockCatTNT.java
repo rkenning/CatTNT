@@ -11,7 +11,6 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.Items;
@@ -70,9 +69,9 @@ public class BlockCatTNT extends Block
 		    {
 		        if (!p_149723_1_.isRemote)
 		        {
-		            EntityTNTPrimed entitytntprimed = new EntityTNTPrimed(p_149723_1_, (double)((float)p_149723_2_ + 0.5F), (double)((float)p_149723_3_ + 0.5F), (double)((float)p_149723_4_ + 0.5F), p_149723_5_.getExplosivePlacedBy());
-		            entitytntprimed.fuse = p_149723_1_.rand.nextInt(entitytntprimed.fuse / 4) + entitytntprimed.fuse / 8;
-		            p_149723_1_.spawnEntityInWorld(entitytntprimed);
+		            ModEntityTNTPrimed ModEntityTNTPrimed = new ModEntityTNTPrimed(p_149723_1_, (double)((float)p_149723_2_ + 4.5F), (double)((float)p_149723_3_ + 0.5F), (double)((float)p_149723_4_ + 0.5F), p_149723_5_.getExplosivePlacedBy());
+		            ModEntityTNTPrimed.fuse = p_149723_1_.rand.nextInt(ModEntityTNTPrimed.fuse / 4) + ModEntityTNTPrimed.fuse / 8;
+		            p_149723_1_.spawnEntityInWorld(ModEntityTNTPrimed);
 		        }
 		    }
 
@@ -90,9 +89,9 @@ public class BlockCatTNT extends Block
 		        {
 		            if ((p_150114_5_ & 1) == 1)
 		            {
-		                EntityTNTPrimed entitytntprimed = new EntityTNTPrimed(p_150114_1_, (double)((float)p_150114_2_ + 0.5F), (double)((float)p_150114_3_ + 0.5F), (double)((float)p_150114_4_ + 0.5F), p_150114_6_);
-		                p_150114_1_.spawnEntityInWorld(entitytntprimed);
-		                p_150114_1_.playSoundAtEntity(entitytntprimed, "game.tnt.primed", 1.0F, 1.0F);
+		                ModEntityTNTPrimed ModEntityTNTPrimed = new ModEntityTNTPrimed(p_150114_1_, (double)((float)p_150114_2_ + 0.5F), (double)((float)p_150114_3_ + 0.5F), (double)((float)p_150114_4_ + 0.5F), p_150114_6_);
+		                p_150114_1_.spawnEntityInWorld(ModEntityTNTPrimed);
+		                p_150114_1_.playSoundAtEntity(ModEntityTNTPrimed, "game.tnt.primed", 1.0F, 1.0F);
 		            }
 		        }
 		    }
