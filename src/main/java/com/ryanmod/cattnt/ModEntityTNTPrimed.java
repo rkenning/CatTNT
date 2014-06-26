@@ -1,7 +1,7 @@
 package com.ryanmod.cattnt;
 
 
-	import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -9,6 +9,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.passive.EntityOcelot;
+import java.math.*;
 
 
 	public class ModEntityTNTPrimed extends Entity {
@@ -107,13 +108,22 @@ import net.minecraft.entity.passive.EntityOcelot;
 			//this.worldObj.makeFireworks(1,  this.posX, this.posY, this.posZ, 100, 100, NBTTagCompound);
 	        
 	        Entity entity;
-	  
+	        double volX = 0;
+	        double volY = 0;
+	        double volZ = 0;
+	        
 	                        
-	        for (int i=1; i<50; i=i+1)
+	        for (int i=1; i<200; i=i+1)
 	        {
 	            entity = new EntityOcelot(this.worldObj);
-		        entity.setPosition(this.posX,this.posY,this.posZ);
+		        entity.setPosition(this.posX,this.posY+5,this.posZ);
 	        	this.worldObj.spawnEntityInWorld(entity);
+	        	
+	        	volX = (Math.random()/40); 
+	        	volY = (Math.random()*10);
+	        	volZ = (Math.random()/40);
+	        	
+	        	entity.addVelocity(volX,volY, volZ);
 	        }
 			
 	    }
