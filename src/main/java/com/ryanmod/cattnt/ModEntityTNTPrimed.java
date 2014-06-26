@@ -113,15 +113,15 @@ import java.math.*;
 	        double volZ = 0;
 	        
 	                        
-	        for (int i=1; i<200; i=i+1)
+	        for (int i=1; i<21; i=i+1)
 	        {
 	            entity = new EntityOcelot(this.worldObj);
-		        entity.setPosition(this.posX,this.posY+5,this.posZ);
+		        entity.setPosition(this.posX,this.posY,this.posZ);
 	        	this.worldObj.spawnEntityInWorld(entity);
 	        	
-	        	volX = (Math.random()/40); 
-	        	volY = (Math.random()*10);
-	        	volZ = (Math.random()/40);
+	        	volX = (Math.random()); 
+	        	volY = (Math.random()+1);
+	        	volZ = (Math.random());
 	        	
 	        	entity.addVelocity(volX,volY, volZ);
 	        }
