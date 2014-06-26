@@ -1,4 +1,4 @@
-package net.ryanmod.cattnt;
+package com.ryanmod.cattnt;
 
 import net.minecraft.block.Block;
 import net.minecraft.creativetab.CreativeTabs;

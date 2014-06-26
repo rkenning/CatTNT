@@ -1,4 +1,4 @@
-package net.ryanmod.cattnt;
+package com.ryanmod.cattnt;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
