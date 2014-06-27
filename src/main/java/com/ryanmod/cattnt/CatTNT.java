@@ -20,13 +20,13 @@ public class CatTNT {
 	
 	public static CreativeTabs ryanTab = new CreativeTabs("RyanMods"){
 		public Item getTabIconItem() {
-			return Items.emerald;
+			return Items.beef;
 		}		
 	};
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e){
-		blockCatTNT = new BlockCatTNT().setBlockName("CatTNT").setCreativeTab(ryanTab);
+		blockCatTNT = new BlockCatTNT().setBlockName("CatTNT").setCreativeTab(ryanTab).setBlockTextureName(modid+ ":" + "cat_tnt_side");
 		GameRegistry.registerBlock(blockCatTNT, "CatTNT");
 	}
 	
