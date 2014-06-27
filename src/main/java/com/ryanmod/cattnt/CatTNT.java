@@ -26,8 +26,8 @@ public class CatTNT {
 	
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent e){
-		blockCatTNT = new BlockCatTNT().setBlockName("blockRed").setCreativeTab(ryanTab);
-		GameRegistry.registerBlock(blockCatTNT, "blockRed");
+		blockCatTNT = new BlockCatTNT().setBlockName("CatTNT").setCreativeTab(ryanTab);
+		GameRegistry.registerBlock(blockCatTNT, "CatTNT");
 	}
 	
 	

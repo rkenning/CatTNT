@@ -4,11 +4,14 @@ package com.ryanmod.cattnt;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityAgeable;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.passive.EntityOcelot;
+import net.minecraft.entity.passive.EntityTameable;
+
 import java.math.*;
 
 
@@ -100,30 +103,54 @@ import java.math.*;
 	    private void explode()
 	    {
 	        //float f = 224.0F;
-	        float f = 1F;
+	        float f = 0F;
 	        this.worldObj.createExplosion(this, this.posX, this.posY, this.posZ, f, true);
 	        
 	        // Playing with Fireworks -- Not quite working yet!
 	        //NBTTagCompound NBTTagCompound = null;
 			//this.worldObj.makeFireworks(1,  this.posX, this.posY, this.posZ, 100, 100, NBTTagCompound);
 	        
-	        Entity entity;
+	        Entity entityocelot;
 	        double volX = 0;
 	        double volY = 0;
 	        double volZ = 0;
 	        
 	                        
-	        for (int i=1; i<21; i=i+1)
+	        for (int i=1; i<201; i=i+1)
 	        {
-	            entity = new EntityOcelot(this.worldObj);
-		        entity.setPosition(this.posX,this.posY,this.posZ);
-	        	this.worldObj.spawnEntityInWorld(entity);
+	        	entityocelot = new EntityOcelot(this.worldObj);
+	        	//entityocelot.initCreature();
+	        	//((EntityAgeable) entityocelot).setGrowingAge(-924000); // Make them kittens
 	        	
-	        	volX = (Math.random()); 
-	        	volY = (Math.random()+1);
-	        	volZ = (Math.random());
+	        	volX = (double)(Math.random())*1; 
+	        	volY = (double)(Math.random())*1;
+	        	volZ = (double)(Math.random())*1;
+	        	 //((EntityTameable) entityocelot).setTamed(true);
 	        	
-	        	entity.addVelocity(volX,volY, volZ);
+	        	
+	        	//entityocelot.setPosition(this.posX,this.posY,this.posZ);
+	        	
+	        	entityocelot.setLocationAndAngles(this.posX-volX,this.posY+volY,this.posZ-volZ,(float)volX ,(float)volY);
+	        	
+	        	//entityocelot.rotationPitch = (float)volX; 
+	        	//entityocelot.rotationYaw = (float)volY;
+	        	
+		        
+		        
+		       
+	        	//entityocelot.addVelocity(volX,volY, volZ);
+	        	
+		        
+	        	this.worldObj.spawnEntityInWorld(entityocelot);
+	            
+	        	this.worldObj.updateEntities();
+
+
+	        	
+	        	//entityocelot.rotationPitch = (float)volX; 
+	        	//entityocelot.rotationYaw = (float)volY;
+	        	//entityocelot.addVelocity(volX,volY, volZ);
+	        
 	        }
 			
 	    }
