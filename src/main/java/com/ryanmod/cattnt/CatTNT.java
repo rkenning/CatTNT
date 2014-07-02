@@ -13,7 +13,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
 @Mod(modid = CatTNT.modid, version = CatTNT.version)
 public class CatTNT {
 
-	public static final String modid = "CatTNT";
+	public static final String modid = "ryanmod";
 	public static final String version = "1.1";
 	
 	public static Block blockCatTNT;

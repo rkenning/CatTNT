@@ -9,10 +9,22 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.world.World;
 import net.minecraft.server.MinecraftServer;
+import net.minecraft.entity.ai.EntityAISit;
 import net.minecraft.entity.passive.EntityOcelot;
 import net.minecraft.entity.passive.EntityTameable;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.entity.SharedMonsterAttributes;
+
+
+
+
+
+
 
 import java.math.*;
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
 
 
 	public class ModEntityTNTPrimed extends Entity {
@@ -110,25 +122,43 @@ import java.math.*;
 	        //NBTTagCompound NBTTagCompound = null;
 			//this.worldObj.makeFireworks(1,  this.posX, this.posY, this.posZ, 100, 100, NBTTagCompound);
 	        
-	        Entity entityocelot;
+	        EntityOcelot entityocelot;
 	        double volX = 0;
 	        double volY = 0;
 	        double volZ = 0;
 	        
-	                        
-	        for (int i=1; i<201; i=i+1)
+	        
+	        String[] userList;
+	        userList =  MinecraftServer.getServer().getConfigurationManager().getAllUsernames();
+	        //EntityPlayer player =  MinecraftServer.getServer().getConfigurationManager().getPlayerForUsername(userList[0]);
+	     
+	      
+	 
+	        
+	        
+	        for (int i=1; i<200; i=i+1)
 	        {
 	        	entityocelot = new EntityOcelot(this.worldObj);
-	        	//entityocelot.initCreature();
-	        	//((EntityAgeable) entityocelot).setGrowingAge(-924000); // Make them kittens
+	        
+	        
 	        	
-	        	volX = (double)(Math.random())*1; 
-	        	volY = (double)(Math.random())*1;
-	        	volZ = (double)(Math.random())*1;
-	        	 //((EntityTameable) entityocelot).setTamed(true);
+	        	volX = (double)(Math.random())*2; 
+	        	volY = (double)(Math.random())*5;
+	        	volZ = (double)(Math.random())*2;
 	        	
 	        	
-	        	//entityocelot.setPosition(this.posX,this.posY,this.posZ);
+	        	
+	        	entityocelot.setTamed(true);
+	        	entityocelot.setTameSkin(1 + this.worldObj.rand.nextInt(3));
+	        	entityocelot.setOwner(userList[0]);
+	           	entityocelot.worldObj.setEntityState(this, (byte)7);
+	           	
+	           	
+	           	double R = (Math.random() * (500 + 500)) + -500;
+	        	entityocelot.setGrowingAge((int) R);
+	        	
+	        	
+	        	
 	        	
 	        	entityocelot.setLocationAndAngles(this.posX-volX,this.posY+volY,this.posZ-volZ,(float)volX ,(float)volY);
 	        	
@@ -140,16 +170,12 @@ import java.math.*;
 		       
 	        	//entityocelot.addVelocity(volX,volY, volZ);
 	        	
-		        
-	        	this.worldObj.spawnEntityInWorld(entityocelot);
-	            
-	        	this.worldObj.updateEntities();
+		        if (this.worldObj.isRemote==false)
+		        {
+		        	this.worldObj.spawnEntityInWorld(entityocelot);
+		        };
 
 
-	        	
-	        	//entityocelot.rotationPitch = (float)volX; 
-	        	//entityocelot.rotationYaw = (float)volY;
-	        	//entityocelot.addVelocity(volX,volY, volZ);
 	        
 	        }
 			
