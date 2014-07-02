@@ -136,15 +136,15 @@ import java.util.List;
 	 
 	        
 	        
-	        for (int i=1; i<20; i=i+1)
+	        for (int i=1; i<21; i=i+1)
 	        {
 	        	entityocelot = new EntityOcelot(this.worldObj);
 	        
 	        
 	        	
-	        	volX = (double)(Math.random())*6; 
-	        	volY = (double)(Math.random())*10;
-	        	volZ = (double)(Math.random())*6;
+	        	volX = (double)(Math.random())*2; 
+	        	volY = (double)(Math.random())*3;
+	        	volZ = (double)(Math.random())*2;
 	        	
 	        	
 	        	
@@ -168,7 +168,7 @@ import java.util.List;
 		        
 		        
 		       
-	        	entityocelot.addVelocity(volX,volY, volZ);
+	        	entityocelot.addVelocity(volX/2,volY/2, volZ/2);
 	        	
 		        if (this.worldObj.isRemote==false)
 		        {
