@@ -136,15 +136,15 @@ import java.util.List;
 	 
 	        
 	        
-	        for (int i=1; i<200; i=i+1)
+	        for (int i=1; i<20; i=i+1)
 	        {
 	        	entityocelot = new EntityOcelot(this.worldObj);
 	        
 	        
 	        	
-	        	volX = (double)(Math.random())*2; 
-	        	volY = (double)(Math.random())*5;
-	        	volZ = (double)(Math.random())*2;
+	        	volX = (double)(Math.random())*6; 
+	        	volY = (double)(Math.random())*10;
+	        	volZ = (double)(Math.random())*6;
 	        	
 	        	
 	        	
@@ -168,13 +168,14 @@ import java.util.List;
 		        
 		        
 		       
-	        	//entityocelot.addVelocity(volX,volY, volZ);
+	        	entityocelot.addVelocity(volX,volY, volZ);
 	        	
 		        if (this.worldObj.isRemote==false)
 		        {
 		        	this.worldObj.spawnEntityInWorld(entityocelot);
+		        	
 		        };
-
+		        this.worldObj.spawnParticle("smoke", this.posX, this.posY + 0.5D, this.posZ, 0.0D, 0.0D, 0.0D);
 
 	        
 	        }
