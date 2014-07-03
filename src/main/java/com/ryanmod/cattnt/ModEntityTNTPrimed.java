@@ -160,7 +160,7 @@ import java.util.List;
 	        	
 	        	
 	        	
-	        	entityocelot.setLocationAndAngles(this.posX-volX,this.posY+volY,this.posZ-volZ,(float)volX ,(float)volY);
+	        	entityocelot.setLocationAndAngles(this.posX,this.posY,this.posZ,(float)volX ,(float)volY);
 	        	
 	        	//entityocelot.rotationPitch = (float)volX; 
 	        	//entityocelot.rotationYaw = (float)volY;
