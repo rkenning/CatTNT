@@ -89,6 +89,8 @@ public class BlockCatTNT extends Block
 		        {
 		            if ((p_150114_5_ & 1) == 1)
 		            {
+		            	/* Function called when TNT is activated */
+		            	
 		                ModEntityTNTPrimed ModEntityTNTPrimed = new ModEntityTNTPrimed(p_150114_1_, (double)((float)p_150114_2_ + 0.5F), (double)((float)p_150114_3_ + 0.5F), (double)((float)p_150114_4_ + 0.5F), p_150114_6_);
 		                p_150114_1_.spawnEntityInWorld(ModEntityTNTPrimed);
 		                p_150114_1_.playSoundAtEntity(ModEntityTNTPrimed, "game.tnt.primed", 1.0F, 1.0F);
