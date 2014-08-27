@@ -54,7 +54,7 @@ import java.util.List;
 	        this.prevPosX = par2;
 	        this.prevPosY = par4;
 	        this.prevPosZ = par6;
-	        this.tntPlacedBy = par8EntityLivingBase;
+	        //this.tntPlacedBy = par8EntityLivingBase;
 	    }
 		
 		
