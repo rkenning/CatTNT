@@ -18,6 +18,8 @@ import net.minecraft.util.IIcon;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
+// Slight change to check push/commit works
+
 public class BlockCatTNT extends Block
 {
 	public BlockCatTNT() {
