@@ -19,6 +19,7 @@ import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 
 // Slight change to check push/commit works
+// Second test commit to make sure it works from my other machine
 
 public class BlockCatTNT extends Block
 {
