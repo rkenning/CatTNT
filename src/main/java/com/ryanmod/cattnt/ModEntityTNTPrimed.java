@@ -5,9 +5,6 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityAgeable;
-import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.world.World;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.entity.ai.EntityAISit;
 import net.minecraft.entity.passive.EntityOcelot;
@@ -17,7 +14,12 @@ import net.minecraft.entity.SharedMonsterAttributes;
 
 
 
-
+import cpw.mods.fml.common.registry.IEntityAdditionalSpawnData;
+import io.netty.buffer.ByteBuf;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityTNTPrimed;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.world.World;
 
 
 
@@ -27,7 +29,8 @@ import java.util.Iterator;
 import java.util.List;
 
 
-	public class ModEntityTNTPrimed extends Entity {
+	public class ModEntityTNTPrimed extends EntityTNTPrimed
+	implements IEntityAdditionalSpawnData{
 
 	    /** How long the fuse is */
 	    public int fuse;
