@@ -6,6 +6,7 @@ import cpw.mods.fml.relauncher.SideOnly;
 import java.util.Random;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockTNT;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
@@ -25,7 +26,7 @@ public class BlockCatTNT extends BlockTNT
 {
 	  public int type;
 
-	  public BlockPlantTNT(int type)
+	  public BlockCatTNT(int type)
 	  {
 	    this.type = type;
 	  }
