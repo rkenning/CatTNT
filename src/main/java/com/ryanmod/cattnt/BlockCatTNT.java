@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityTNTPrimed;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
 import net.minecraft.init.Items;
@@ -26,21 +27,22 @@ public class BlockCatTNT extends BlockTNT
 {
 	  public int type;
 
-	  public BlockCatTNT(int type)
+	  public BlockCatTNT()
 	  {
-	    this.type = type;
+	    this.type = 1;
 	  }
 
-	  public void func_149723_a(World p_149723_1_, int p_149723_2_, int p_149723_3_, int p_149723_4_, Explosion p_149723_5_)
-	  {
-	    if (!p_149723_1_.isRemote)
+	  
+	  
+	    public void onBlockDestroyedByExplosion(World p_149723_1_, int p_149723_2_, int p_149723_3_, int p_149723_4_, Explosion p_149723_5_)
 	    {
-	    	ModEntityTNTPrimed entitytntprimed = new EntityPlantTNTPrimed(p_149723_1_, p_149723_2_ + 0.5F, p_149723_3_ + 0.5F, p_149723_4_ + 0.5F, p_149723_5_.getExplosivePlacedBy());
-	      entitytntprimed.type = this.type;
-	      entitytntprimed.field_70516_a = (p_149723_1_.rand.nextInt(entitytntprimed.field_70516_a / 4) + entitytntprimed.field_70516_a / 8);
-	      p_149723_1_.spawnEntityInWorld(entitytntprimed);
+	        if (!p_149723_1_.isRemote)
+	        {
+	        	ModEntityTNTPrimed entitytntprimed = new ModEntityTNTPrimed(p_149723_1_, (double)((float)p_149723_2_ + 0.5F), (double)((float)p_149723_3_ + 0.5F), (double)((float)p_149723_4_ + 0.5F), p_149723_5_.getExplosivePlacedBy());
+	            entitytntprimed.fuse = p_149723_1_.rand.nextInt(entitytntprimed.fuse / 4) + entitytntprimed.fuse / 8;
+	            p_149723_1_.spawnEntityInWorld(entitytntprimed);
+	        }
 	    }
-	  }
 
 	  public void func_150114_a(World p_150114_1_, int p_150114_2_, int p_150114_3_, int p_150114_4_, int p_150114_5_, EntityLivingBase p_150114_6_)
 	  {
@@ -48,7 +50,7 @@ public class BlockCatTNT extends BlockTNT
 	    {
 	      if ((p_150114_5_ & 0x1) == 1)
 	      {
-	    	  ModEntityTNTPrimed entitytntprimed = new EntityPlantTNTPrimed(p_150114_1_, p_150114_2_ + 0.5F, p_150114_3_ + 0.5F, p_150114_4_ + 0.5F, p_150114_6_);
+	    	  ModEntityTNTPrimed entitytntprimed = new ModEntityTNTPrimed(p_150114_1_, p_150114_2_ + 0.5F, p_150114_3_ + 0.5F, p_150114_4_ + 0.5F, p_150114_6_);
 	        entitytntprimed.type = this.type;
 	        p_150114_1_.spawnEntityInWorld(entitytntprimed);
 	        p_150114_1_.playSoundAtEntity(entitytntprimed, "game.tnt.primed", 1.0F, 1.0F);
