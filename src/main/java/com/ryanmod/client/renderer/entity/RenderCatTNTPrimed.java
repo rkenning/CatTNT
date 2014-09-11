@@ -13,7 +13,7 @@ import net.minecraft.util.ResourceLocation;
 import org.lwjgl.opengl.GL11;
 
 import com.ryanmod.cattnt.BlockCatTNT;
-import com.ryanmod.cattnt.ModEntityTNTPrimed;
+import com.ryanmod.cattnt.EntityCatTNTPrimed;
 
 @SideOnly(Side.CLIENT)
 public class RenderCatTNTPrimed {
@@ -48,7 +48,7 @@ public class RenderCatTNTPrimed {
 	        }
 
 	        f2 = (1.0F - ((float)par1EntityTNTPrimed.fuse - par9 + 1.0F) / 100.0F) * 0.8F;
-	        //this.bindEntityTexture(par1EntityTNTPrimed);
+	        this.bindEntityTexture(par1EntityTNTPrimed);
 	        this.blockRenderer.renderBlockAsItem(Blocks.tnt, 0, par1EntityTNTPrimed.getBrightness(par9));
 
 	        if (par1EntityTNTPrimed.fuse / 5 % 2 == 0)

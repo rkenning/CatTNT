@@ -38,7 +38,7 @@ public class BlockCatTNT extends BlockTNT
 	    {
 	        if (!p_149723_1_.isRemote)
 	        {
-	        	ModEntityTNTPrimed entitytntprimed = new ModEntityTNTPrimed(p_149723_1_, (double)((float)p_149723_2_ + 0.5F), (double)((float)p_149723_3_ + 0.5F), (double)((float)p_149723_4_ + 0.5F), p_149723_5_.getExplosivePlacedBy());
+	        	EntityCatTNTPrimed entitytntprimed = new EntityCatTNTPrimed(p_149723_1_, (double)((float)p_149723_2_ + 0.5F), (double)((float)p_149723_3_ + 0.5F), (double)((float)p_149723_4_ + 0.5F), p_149723_5_.getExplosivePlacedBy());
 	            entitytntprimed.fuse = p_149723_1_.rand.nextInt(entitytntprimed.fuse / 4) + entitytntprimed.fuse / 8;
 	            p_149723_1_.spawnEntityInWorld(entitytntprimed);
 	        }
@@ -50,7 +50,7 @@ public class BlockCatTNT extends BlockTNT
 	    {
 	      if ((p_150114_5_ & 0x1) == 1)
 	      {
-	    	  ModEntityTNTPrimed entitytntprimed = new ModEntityTNTPrimed(p_150114_1_, p_150114_2_ + 0.5F, p_150114_3_ + 0.5F, p_150114_4_ + 0.5F, p_150114_6_);
+	    	  EntityCatTNTPrimed entitytntprimed = new EntityCatTNTPrimed(p_150114_1_, p_150114_2_ + 0.5F, p_150114_3_ + 0.5F, p_150114_4_ + 0.5F, p_150114_6_);
 	        entitytntprimed.type = this.type;
 	        p_150114_1_.spawnEntityInWorld(entitytntprimed);
 	        p_150114_1_.playSoundAtEntity(entitytntprimed, "game.tnt.primed", 1.0F, 1.0F);

@@ -24,18 +24,18 @@ import net.minecraft.world.World;
 
 
 
-	public class ModEntityTNTPrimed extends EntityTNTPrimed
+	public class EntityCatTNTPrimed extends EntityTNTPrimed
 	implements IEntityAdditionalSpawnData
 	
 	{
 		  public int type;
 
-		  public ModEntityTNTPrimed(World par1World)
+		  public EntityCatTNTPrimed(World par1World)
 		  {
 		    super(par1World);
 		  }
 
-		  public ModEntityTNTPrimed(World par1World, double par2, double par4, double par6, EntityLivingBase par8EntityLivingBase)
+		  public EntityCatTNTPrimed(World par1World, double par2, double par4, double par6, EntityLivingBase par8EntityLivingBase)
 		  {
 		    super(par1World, par2, par4, par6, par8EntityLivingBase);
 		  }
@@ -86,13 +86,15 @@ import net.minecraft.world.World;
 		@Override
 		public void writeSpawnData(ByteBuf buffer) {
 			// TODO Auto-generated method stub
-			
+		    buffer.writeInt(this.fuse);
+		 
 		}
 
 		@Override
 		public void readSpawnData(ByteBuf additionalData) {
 			// TODO Auto-generated method stub
-			
+		 this.fuse = additionalData.readInt();
+		 	
 		}
 
 		 
