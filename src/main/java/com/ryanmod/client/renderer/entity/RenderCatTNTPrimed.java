@@ -4,6 +4,7 @@ import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.RenderBlocks;
+import net.minecraft.client.renderer.entity.RenderTNTPrimed;
 import net.minecraft.client.renderer.texture.TextureMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.item.EntityTNTPrimed;
@@ -16,7 +17,7 @@ import com.ryanmod.cattnt.BlockCatTNT;
 import com.ryanmod.cattnt.EntityCatTNTPrimed;
 
 @SideOnly(Side.CLIENT)
-public class RenderCatTNTPrimed {
+public class RenderCatTNTPrimed extends RenderTNTPrimed{
 	  private RenderBlocks blockRenderer = new RenderBlocks();
 	   
 	    public void doRender(EntityTNTPrimed par1EntityTNTPrimed, double par2, double par4, double par6, float par8, float par9)
