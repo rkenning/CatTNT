@@ -1,5 +1,7 @@
 package com.ryanmod.cattnt;
 
+import sun.security.ssl.Debug;
+
 import com.ryanmod.client.renderer.entity.RenderCatTNTPrimed;
 
 import cpw.mods.fml.client.registry.RenderingRegistry;
@@ -33,9 +35,12 @@ public class CatTNT {
 		}		
 	};
 	
+
+	
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent e){
-		blockCatTNT = new BlockCatTNT().setBlockName("CatTNT").setCreativeTab(ryanTab).setBlockTextureName(modid+ ":" + "cat_tnt_side");
+		blockCatTNT = new BlockCatTNT().setBlockName("CatTNT").setCreativeTab(ryanTab).setBlockTextureName(modid + ":" + "cat_tnt_side");
+		Debug.println(modid + ":" + "cat_tnt_side", "");
 		
 		GameRegistry.registerBlock(blockCatTNT, "CatTNT");
 	}
@@ -47,7 +52,7 @@ public class CatTNT {
 	  }
 
 	  public void loadRecipes() {
-	    GameRegistry.addRecipe(new ItemStack(blockCatTNT, 1), new Object[] { "X#X", "#X#", "X#X", Character.valueOf('X'), Items.gunpowder, Character.valueOf('#'), Blocks.red_flower });
+	    GameRegistry.addRecipe(new ItemStack(blockCatTNT, 1), new Object[] { "XXX", "X#X", "XXX", Character.valueOf('X'), Items.gunpowder, Character.valueOf('#'), Items.string });
   }
 
 	  public void loadRenderers() {
