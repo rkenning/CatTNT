@@ -39,7 +39,7 @@ public class CatTNT {
 	
 	@Mod.EventHandler
 	public void preInit(FMLPreInitializationEvent e){
-		blockCatTNT = new BlockCatTNT().setBlockName("CatTNT").setCreativeTab(ryanTab).setBlockTextureName(modid + ":" + "cat_tnt_side");
+		blockCatTNT = new BlockCatTNT().setBlockName("CatTNT").setCreativeTab(ryanTab).setBlockTextureName(modid + ":" + "cat_tnt");
 		Debug.println(modid + ":" + "cat_tnt_side", "");
 		
 		GameRegistry.registerBlock(blockCatTNT, "CatTNT");
