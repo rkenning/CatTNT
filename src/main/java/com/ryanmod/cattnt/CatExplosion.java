@@ -245,7 +245,7 @@ public class CatExplosion extends Explosion
 	           volZ = (double )(Math.random());  // Right
 	           entityocelot.setTamed(true);
 	           entityocelot.setTameSkin(1 + this.worldObj .rand .nextInt(3));
-	           entityocelot.setOwner(userList [0]);
+	         //  entityocelot.setOwner(userList [0]);
 	           
 	           double R = (Math.random() * (500 + 500)) + -1500;
 	           entityocelot.setGrowingAge((int) R);
