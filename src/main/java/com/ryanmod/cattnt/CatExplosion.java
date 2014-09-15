@@ -36,6 +36,8 @@ public class CatExplosion extends Explosion
     super(par1World, par2Entity, par3, par5, par7, par9);
     this.type = type;
     this.worldObj = par1World;
+    // SIze of the explosion
+    this.explosionSize = 1;
   }
   
   /**
@@ -145,6 +147,7 @@ public class CatExplosion extends Explosion
     
 
       this.explosionSize = f;
+      
   }
   /**
    * Does the second part of the explosion (sound, particles, drop spawn)
@@ -159,7 +162,7 @@ public class CatExplosion extends Explosion
       }
       else
       {
-          this.worldObj.spawnParticle("largeexplode", this.explosionX, this.explosionY, this.explosionZ, 1.0D, 0.0D, 0.0D);
+         this.worldObj.spawnParticle("largeexplode", this.explosionX, this.explosionY, this.explosionZ, 1.0D, 0.0D, 0.0D);
       }
 
       Iterator iterator;
@@ -169,6 +172,7 @@ public class CatExplosion extends Explosion
       int k;
       Block block;
 
+      
       if (this.isSmoking)
       {
           iterator = this.affectedBlockPositions.iterator();
@@ -219,6 +223,7 @@ public class CatExplosion extends Explosion
               }
           }
       
+          
           /* Create the cats 
           ====================================*/
 	      
@@ -230,28 +235,29 @@ public class CatExplosion extends Explosion
 	     
 	      String[] userList;
 	      userList =  MinecraftServer.getServer().getConfigurationManager().getAllUsernames();
-	      //EntityPlayer player =  MinecraftServer.getServer().getConfigurationManager().getPlayerForUsername(userList[0]);
+	      EntityPlayer player =  MinecraftServer.getServer().getConfigurationManager().getPlayerForUsername(userList[0]);
 	     
-	      for (int cati =1; cati<50; cati= cati+1)
+	      for (int cati =1; cati<30; cati= cati+1)
 	      {
 	           entityocelot = new EntityOcelot(this. worldObj);
-	           volX = (double )(Math.random())*2;
-	           volY = (double )(Math.random())*3;
-	           volZ = (double )(Math.random())*2;
+	           volX = (double )(Math.random());  // Left
+	           volY = (double )(Math.random()*2); // Up
+	           volZ = (double )(Math.random());  // Right
 	           entityocelot.setTamed(true);
 	           entityocelot.setTameSkin(1 + this.worldObj .rand .nextInt(3));
 	           entityocelot.setOwner(userList [0]);
-	           //entityocelot.worldObj.setEntityState(this, ( byte)7);
+	           
 	           double R = (Math.random() * (500 + 500)) + -1500;
 	           entityocelot.setGrowingAge((int) R);
 	            entityocelot .setLocationAndAngles(this.explosionX, this.explosionY, this.explosionZ,(float) volX ,(float )volY );
 	          
-	           //entityocelot.rotationPitch = (float)volX;
-	           //entityocelot.rotationYaw = (float)volY;
-	           entityocelot.addVelocity(volX /2,volY/2, volZ/2);
+
+	           entityocelot.addVelocity(volX ,volY, volZ);
 	            if (this .worldObj .isRemote ==false)
 	            {
 	                 this.worldObj .spawnEntityInWorld(entityocelot);
+	  	           entityocelot.rotationPitch = (float)volX;
+		           entityocelot.rotationYaw = (float)volY;
 	                
 	            };
 	        
@@ -281,6 +287,9 @@ public class CatExplosion extends Explosion
               }
           }
       }
+  
   }
-  }}
+  
+  }
+  }
 

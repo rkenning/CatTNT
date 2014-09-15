@@ -26,7 +26,7 @@ public class RenderCatTNTPrimed extends RenderTNTPrimed{
 	        GL11.glTranslatef((float)par2, (float)par4, (float)par6);
 	        float f2;
 
-	        Block renderBlock = new BlockCatTNT();     
+	        Block renderBlock = com.ryanmod.cattnt.CatTNT.blockCatTNT;     
 	        
 	        if ((float)par1EntityTNTPrimed.fuse - par9 + 1.0F < 10.0F)
 	        {
@@ -50,7 +50,7 @@ public class RenderCatTNTPrimed extends RenderTNTPrimed{
 
 	        f2 = (1.0F - ((float)par1EntityTNTPrimed.fuse - par9 + 1.0F) / 100.0F) * 0.8F;
 	        this.bindEntityTexture(par1EntityTNTPrimed);
-	        this.blockRenderer.renderBlockAsItem(Blocks.tnt, 0, par1EntityTNTPrimed.getBrightness(par9));
+	        this.blockRenderer.renderBlockAsItem(renderBlock, 0, par1EntityTNTPrimed.getBrightness(par9));
 
 	        if (par1EntityTNTPrimed.fuse / 5 % 2 == 0)
 	        {
@@ -59,7 +59,7 @@ public class RenderCatTNTPrimed extends RenderTNTPrimed{
 	            GL11.glEnable(GL11.GL_BLEND);
 	            GL11.glBlendFunc(GL11.GL_SRC_ALPHA, GL11.GL_DST_ALPHA);
 	            GL11.glColor4f(1.0F, 1.0F, 1.0F, f2);
-	            this.blockRenderer.renderBlockAsItem(Blocks.tnt, 0, 1.0F);
+	            this.blockRenderer.renderBlockAsItem(renderBlock, 0, 1.0F);
 	            GL11.glColor4f(1.0F, 1.0F, 1.0F, 1.0F);
 	            GL11.glDisable(GL11.GL_BLEND);
 	            GL11.glEnable(GL11.GL_LIGHTING);
