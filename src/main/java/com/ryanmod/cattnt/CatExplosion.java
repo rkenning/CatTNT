@@ -22,6 +22,8 @@ import net.minecraft.world.ChunkPosition;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
 import net.minecraft.entity.passive.EntityOcelot;
+import com.ryanmod.cattnt.EntityCatty;
+
 
 public class CatExplosion extends Explosion
 {
@@ -227,7 +229,8 @@ public class CatExplosion extends Explosion
           /* Create the cats 
           ====================================*/
 	      
-	      EntityOcelot entityocelot;
+          //EntityOcelot entityocelot;
+          EntityCatty entityocelot;
 	      double volX = 0;
 	      double volY = 0;
 	      double volZ = 0;
@@ -240,25 +243,33 @@ public class CatExplosion extends Explosion
 	     
 	      for (int cati =1; cati<30; cati= cati+1)
 	      {
-	           entityocelot = new EntityOcelot(this. worldObj);
+	           entityocelot = new EntityCatty(this.worldObj);
+	    	  //entityocelot = new EntityOcelot (this. worldObj);
 	           volX = (double )(Math.random());  // Left
-	           volY = (double )(Math.random()*2); // Up
+	           volY = (double )(Math.random()); // Up
 	           volZ = (double )(Math.random());  // Right
-	           entityocelot.setTamed(true);
-	           entityocelot.setTameSkin(1 + this.worldObj .rand .nextInt(3));
-	         //  entityocelot.setOwner(userList [0]);
+	           
+	           
+  
+	           
+	 
+	          
 	           
 	           double R = (Math.random() * (500 + 500)) + -1500;
-	           entityocelot.setGrowingAge((int) R);
-	            entityocelot .setLocationAndAngles(this.explosionX, this.explosionY, this.explosionZ,(float) volX ,(float )volY );
-	          
-
+	            entityocelot .setLocationAndAngles(this.explosionX, this.explosionY+4, this.explosionZ,0.0F ,0.0F );
+        
+                entityocelot.setGrowingAge(-24000);
+                
+	            
 	           entityocelot.addVelocity(volX ,volY, volZ);
-	            if (this .worldObj .isRemote ==false)
+	           
+
+	           //entityocelot.postExplosion();
+	           
+	            if (this.worldObj.isRemote ==false)
 	            {
-	                 this.worldObj .spawnEntityInWorld(entityocelot);
-	  	           entityocelot.rotationPitch = (float)volX;
-		           entityocelot.rotationYaw = (float)volY;
+	                 this.worldObj.spawnEntityInWorld(entityocelot);
+
 	                
 	            };
 	        
