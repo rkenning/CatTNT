@@ -229,8 +229,8 @@ public class CatExplosion extends Explosion
           /* Create the cats 
           ====================================*/
 	      
-          //EntityOcelot entityocelot;
-          EntityCatty entityocelot;
+          EntityOcelot entityocelot;
+          //EntityCatty entityocelot; -- Removed until I can get a custom entity setup correctly
 	      double volX = 0;
 	      double volY = 0;
 	      double volZ = 0;
@@ -239,32 +239,24 @@ public class CatExplosion extends Explosion
 	      String[] userList;
 	      userList =  MinecraftServer.getServer().getConfigurationManager().getAllUsernames();
 	      
-	      //EntityPlayer player =  MinecraftServer.getServer().getConfigurationManager().getPlayerForUsername(userList[0]);
-	     
-	      for (int cati =1; cati<30; cati= cati+1)
+	       for (int cati =1; cati<200; cati= cati+1)
 	      {
-	           entityocelot = new EntityCatty(this.worldObj);
-	    	  //entityocelot = new EntityOcelot (this. worldObj);
+	           entityocelot = new EntityOcelot(this.worldObj);
+	    	   //entityocelot = new EntityCatty (this. worldObj);
 	           volX = (double )(Math.random());  // Left
 	           volY = (double )(Math.random()); // Up
 	           volZ = (double )(Math.random());  // Right
 	           
-	           
-  
-	           
-	 
-	          
-	           
 	           double R = (Math.random() * (500 + 500)) + -1500;
-	            entityocelot .setLocationAndAngles(this.explosionX, this.explosionY+4, this.explosionZ,0.0F ,0.0F );
+	           entityocelot.setLocationAndAngles(this.explosionX+volX, this.explosionY+volY, this.explosionZ+volZ,0.0F ,0.0F );
         
-                entityocelot.setGrowingAge(-24000);
+               entityocelot.setGrowingAge(-24000);
                 
 	            
-	           entityocelot.addVelocity(volX ,volY, volZ);
+	          //entityocelot.addVelocity(1 ,1, 1);
 	           
 
-	           //entityocelot.postExplosion();
+	          // entityocelot.postExplosion();
 	           
 	            if (this.worldObj.isRemote ==false)
 	            {
