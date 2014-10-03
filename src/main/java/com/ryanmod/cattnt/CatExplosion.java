@@ -237,12 +237,12 @@ public class CatExplosion extends Explosion
 	      userList =  MinecraftServer.getServer().getConfigurationManager().getAllUsernames();
 	      EntityPlayer player =  MinecraftServer.getServer().getConfigurationManager().getPlayerForUsername(userList[0]);
 	     
-	      for (int cati =1; cati<30; cati= cati+1)
+	      for (int cati =1; cati<50; cati= cati+1)
 	      {
 	           entityocelot = new EntityOcelot(this. worldObj);
-	           volX = (double )(Math.random());  // Left
-	           volY = (double )(Math.random()*2); // Up
-	           volZ = (double )(Math.random());  // Right
+	           volX = (double )(Math.random())*.9;  // Left
+	           volY = (double )(Math.random())*.9; // Up
+	           volZ = (double )(Math.random())*.9;  // Right
 	           entityocelot.setTamed(true);
 	           entityocelot.setTameSkin(1 + this.worldObj .rand .nextInt(3));
 	           entityocelot.setOwner(userList [0]);
