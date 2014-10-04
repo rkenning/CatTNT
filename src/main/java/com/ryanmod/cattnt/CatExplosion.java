@@ -240,9 +240,9 @@ public class CatExplosion extends Explosion
 	      for (int cati =1; cati<50; cati= cati+1)
 	      {
 	           entityocelot = new EntityOcelot(this. worldObj);
-	           volX = (double )(Math.random())*.9;  // Left
-	           volY = (double )(Math.random())*.9; // Up
-	           volZ = (double )(Math.random())*.9;  // Right
+	           volX = (double )(Math.random())*.1;  // Left
+	           volY = (double )(Math.random())*1; // Up
+	           volZ = (double )(Math.random())*.1;  // Right
 	           entityocelot.setTamed(true);
 	           entityocelot.setTameSkin(1 + this.worldObj .rand .nextInt(3));
 	           entityocelot.setOwner(userList [0]);
